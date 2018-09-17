@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ljy_maven_github_ssm:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="ljy_maven_github_ssm.war">
+      <element id="artifact" artifact-name="ljy_maven_github_ssm:war exploded" />
+    </root>
+  </artifact>
+</component>
