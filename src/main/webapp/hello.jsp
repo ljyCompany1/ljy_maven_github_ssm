@@ -8,9 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>$Title$</title>
+    <title>hello</title>
   </head>
   <body>
-  <a href="hello">点我就和你说hello</a>
+  hello
   </body>
 </html>
