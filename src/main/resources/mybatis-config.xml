@@ -11,7 +11,7 @@
 
 	<mappers>
 		<!--注册adminMappe.xml文件 -->
-	<mapper resource="com/ljy/maven_github_ssm/dao/mapper/adminMapper.xml"/>
+	    <mapper resource="com/ljy/maven_github_ssm/dao/mapper/adminMapper.xml"/>
 	</mappers>
 
 
