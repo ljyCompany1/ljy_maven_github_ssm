@@ -263,6 +263,16 @@
 
   <build>
     <finalName>ljy_maven_github_ssm</finalName>
+    <resources>
+      <!-- idea不会编译src的java目录的xml文件
+  解决思路：通过下面的build标签，将IDEA maven项目中src源代码下的xml等资源文件编译进classes文件夹-->
+      <resource>
+        <directory>src/main/java</directory>
+        <includes>
+          <include>**/*.xml</include>
+        </includes>
+      </resource>
+    </resources>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <plugin>
