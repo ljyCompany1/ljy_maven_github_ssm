@@ -11,6 +11,12 @@ public class AdminService {
     @Resource
     private AdminDao adminDao;
 
+    /*
+    登录方法
+    @param username  账户名
+    @param password  密码
+    @return true表示登录成功，false表示登录失败
+     */
     public boolean login(String username,String password){
         Admin admin=adminDao.login(username, password);
         if(admin!=null){

@@ -8,4 +8,17 @@
     <select id="login"  resultType="Admin">
         select * from admin where username=#{username} and password=#{password}
     </select>
+
+    <delete id="delete" >
+        delete from admin where id=#{id}
+    </delete>
+
+    <select id="get"  resultType="Admin">
+        select * from admin where id=#{id}
+    </select>
+
+    <insert id="add">
+          insert into admin(id,username,password,name)
+          values(null,#{username},#{password},#{name})
+    </insert>
 </mapper>
