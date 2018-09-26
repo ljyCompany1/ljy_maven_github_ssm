@@ -12,6 +12,7 @@
     String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
 %>
 <!DOCTYPE html>
+<html>
 <head>
     <title>hello</title>
     <!--导入bootstrap插件-->
