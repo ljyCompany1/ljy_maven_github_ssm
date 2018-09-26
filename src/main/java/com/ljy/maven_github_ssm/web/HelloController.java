@@ -13,7 +13,7 @@ public class HelloController {
 	 */
 	@RequestMapping(value = "/hello")
 	public String hello(){
-		return "/hello.jsp";
+		return "/jsp/hello.jsp";
 	}
 
 }

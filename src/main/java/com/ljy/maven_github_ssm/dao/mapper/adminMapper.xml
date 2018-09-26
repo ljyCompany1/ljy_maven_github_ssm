@@ -21,4 +21,8 @@
           insert into admin(id,username,password,name)
           values(null,#{username},#{password},#{name})
     </insert>
+
+    <select id="readAll" resultType="Admin">
+        select * from admin order by id asc
+    </select>
 </mapper>

@@ -15,4 +15,9 @@ public class AdminServiceTest  extends SpringJunitTest {
         System.out.println(adminService.login("user","123456"));
         System.out.println(adminService.login("user","123"));
     }
+
+    @Test
+    public void getAdminsTest(){
+        System.out.println("账户总数："+adminService.getAdmins().size());
+    }
 }

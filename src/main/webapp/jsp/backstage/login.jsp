@@ -13,6 +13,8 @@
 <html>
 <head>
     <title>hello</title>
+    <!--导入自定义样式文件-->
+    <link rel="stylesheet" href="<%=basePath%>css/mycss.css">
 </head>
 <body>
 <form action="<%=basePath%>backstage/login" method="post">

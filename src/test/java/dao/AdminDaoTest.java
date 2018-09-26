@@ -40,4 +40,9 @@ public class AdminDaoTest extends SpringJunitTest {
         admin.setName("小红");
         adminDao.add(admin);
     }
+
+    @Test
+    public void readAllTest(){
+        System.out.println("账户总数："+adminDao.readAll().size());
+    }
 }
