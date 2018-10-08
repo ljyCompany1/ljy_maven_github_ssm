@@ -14,7 +14,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>hello</title>
+    <title>管理账户列表</title>
     <!--导入bootstrap插件-->
     <link rel="stylesheet" href="<%=basePath%>plugins/bootstrap/css/bootstrap.css">
     <script src="<%=basePath%>plugins/jquery.js"></script>

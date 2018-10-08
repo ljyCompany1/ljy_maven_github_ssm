@@ -10,6 +10,7 @@
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
 
+  <!--spring mvc配置-->
   <servlet>
     <servlet-name>spring</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
