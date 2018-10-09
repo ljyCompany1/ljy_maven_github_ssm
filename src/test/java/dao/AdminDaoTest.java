@@ -45,4 +45,9 @@ public class AdminDaoTest extends SpringJunitTest {
     public void readAllTest(){
         System.out.println("账户总数："+adminDao.readAll().size());
     }
+
+    @Test
+    public void countAdminByUsernameTest(){
+        System.out.println("账户同名数量："+adminDao.countAdminByUsername("admin"));
+    }
 }

@@ -40,9 +40,23 @@ public interface AdminDao {
 	int add(Admin admin);
 
 	/**
+	 * 	编辑账户信息
+	 * @param admin 账户信息，注意表中的非空字段不能为空
+	 * @return 编辑了几条记录信息
+	 */
+	int update(Admin admin);
+
+	/**
 	 * 从数据库中读取所有账户记录
 	 * @return 如果没有记录则集合为空（注意不是Null）
 	 */
 	List<Admin> readAll();
+
+	/**
+	 * 获取数据库中相同账户名的数量，用于判断创建账户时的账户名是否重名
+	 * @param username
+	 * @return
+	 */
+	int countAdminByUsername(String username);
 }
 

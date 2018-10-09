@@ -46,8 +46,10 @@
 
 </head>
 <body>
-${sessionScope.admin.name}，<a href="<%=basePath %>backstage/logout">注销</a><br/>
-<a href="#" class="btn btn-primary" role="button">添加管理账户</a>
+<div style="text-align: right;">
+${sessionScope.admin.name}，<a href="<%=basePath %>backstage/logout">注销</a>
+</div>
+<a href="<%=basePath%>backstage/adminmanage/toAddAdmin" class="btn btn-primary" role="button" style="margin:5px 2px;">添加管理账户</a>
 <table class="table table-bordered table-hover  table-striped">
 <%--<caption>管理账户列表</caption>--%>
 <thead>
@@ -64,7 +66,9 @@ ${sessionScope.admin.name}，<a href="<%=basePath %>backstage/logout">注销</a>
     <td>${admin.username}</td>
     <td>${admin.password}</td>
     <td>${admin.name}</td>
-    <td><a href="#">修改</a> <a name="deleteAdmin" href="<%=basePath %>backstage/adminmanage/doDeleteAdmin?id=${admin.id}">删除</a></td>
+    <td style="width:20%;"><a href="<%=basePath %>backstage/adminmanage/toUpdateAdmin?id=${admin.id}" class="btn btn-info btn-xs">修改</a>
+        <a name="deleteAdmin" class="btn btn-info btn-xs" href="<%=basePath %>backstage/adminmanage/doDeleteAdmin?id=${admin.id}">删除</a>
+    </td>
 </tr>
 </c:forEach>
 </tbody>

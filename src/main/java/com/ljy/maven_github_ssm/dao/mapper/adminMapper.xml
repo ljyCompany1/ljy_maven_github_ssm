@@ -25,4 +25,19 @@
     <select id="readAll" resultType="Admin">
         select * from admin order by id asc
     </select>
+
+    <select id="countAdminByUsername"  resultType="int">
+        select count(id) from admin where username=#{username}
+    </select>
+
+    <update id="update" parameterType="Admin">
+        update admin
+        <!-- 使用set标签可以将动态的配置SET 关键字，和剔除追加到条件末尾的任何不相关的逗号。 -->
+        <set>
+            <if test="username!=null and username.length()>0">username=#{username},</if>
+            <if test="name!=null and name.length()>0">name=#{name},</if>
+            <if test="password!=null and password.length()>0">password=#{password},</if>
+        </set>
+        where id=#{id}
+    </update>
 </mapper>
