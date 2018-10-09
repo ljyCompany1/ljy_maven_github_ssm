@@ -22,10 +22,34 @@
     <!--导入自定义样式文件-->
     <link rel="stylesheet" href="<%=basePath%>css/mycss.css">
 
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("a[name='deleteAdmin']").click(function() {
+                var $a = $(this);//获取指定a标签的jquery对象
+                if(window.confirm('确定要删除该账户吗？删除后无法恢复')) {
+                    $.get($a.attr("href"), function(data) {
+                        //jquery自带的json转换方法
+                        if(typeof data != 'object') { //如果不是JS对象（则为JSON格式的数据，如servlet输出的JSON），则转换成JS对象
+                            data = $.parseJSON(data);
+                        }
+                        if(data.status == 1) { //如果删除成功
+                            $a.parents("tr").remove();//移除该元素所在表格行
+                        }else{//如果删除失败
+                            alert(data.myMessage);
+                        }
+                    });
+                }
+                return false;//让链接事件失效，即不再执行原链接跳转
+            });
+        });
+    </script>
+
 </head>
 <body>
+${sessionScope.admin.name}，<a href="<%=basePath %>backstage/logout">注销</a><br/>
+<a href="#" class="btn btn-primary" role="button">添加管理账户</a>
 <table class="table table-bordered table-hover  table-striped">
-<caption>管理账户列表</caption>
+<%--<caption>管理账户列表</caption>--%>
 <thead>
 <tr>
     <th>账户名</th>
@@ -40,7 +64,7 @@
     <td>${admin.username}</td>
     <td>${admin.password}</td>
     <td>${admin.name}</td>
-    <td><a href="#">修改</a> <a href="#">删除</a></td>
+    <td><a href="#">修改</a> <a name="deleteAdmin" href="<%=basePath %>backstage/adminmanage/doDeleteAdmin?id=${admin.id}">删除</a></td>
 </tr>
 </c:forEach>
 </tbody>

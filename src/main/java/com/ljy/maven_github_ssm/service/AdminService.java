@@ -8,32 +8,26 @@ import javax.annotation.Resource;
 import java.util.List;
 
 @Service
-public class AdminService {
-    @Resource
-    private AdminDao adminDao;
-
+public interface AdminService {
     /**
      * 登录方法
      *
      * @param username 账户名
      * @param password 密码
-     * @return true表示登录成功，false表示登录失败
+     * @return null表示登录失败
      */
-    public boolean login(String username, String password) {
-        Admin admin = adminDao.login(username, password);
-        if (admin != null) {
-            return true;
-        } else {
-            return false;
-        }
-    }
+    Admin login(String username, String password);
 
     /**
      * 获取所有账户集合
      */
-    public List<Admin> getAdmins() {
-        return adminDao.readAll();
-    }
+    List<Admin> getAdmins();
+
+    /**
+     * 删除指定账户
+     * @param id
+     */
+    void deleteAdmin(Integer id);
 
 
 }
