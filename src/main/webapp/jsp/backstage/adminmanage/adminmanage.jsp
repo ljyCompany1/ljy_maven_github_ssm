@@ -46,8 +46,11 @@
 
 </head>
 <body>
-<a href="<%=basePath%>backstage/adminmanage/toAddAdmin" class="btn btn-primary" role="button" style="margin:5px 2px;">
-    <span class="glyphicon glyphicon-user"></span> 添加管理账户
+<div style="text-align: right;">
+${sessionScope.admin.name}，<a href="<%=basePath %>backstage/logout">注销</a>
+</div>
+<a href="<%=basePath%>backstage/adminmanage/toAddAdmin" class="btn btn-primary" role="button" style="margin:5px 2px;text-shadow: black 5px 3px 3px;">
+    <span class="glyphicon glyphicon-plus" style="margin-right:5px;"></span> 添加管理账户
 </a>
 <table class="table table-bordered table-hover  table-striped">
 <%--<caption>管理账户列表</caption>--%>
