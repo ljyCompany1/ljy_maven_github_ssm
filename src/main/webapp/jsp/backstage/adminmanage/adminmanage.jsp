@@ -15,12 +15,10 @@
 <html>
 <head>
     <title>管理账户列表</title>
-    <!--导入bootstrap插件-->
-    <link rel="stylesheet" href="<%=basePath%>plugins/bootstrap/css/bootstrap.css">
+    <!--导入jquery插件-->
     <script src="<%=basePath%>plugins/jquery.js"></script>
-    <script type="text/javascript" src="<%=basePath%>plugins/bootstrap/js/bootstrap.js"></script>
-    <!--导入自定义样式文件-->
-    <link rel="stylesheet" href="<%=basePath%>css/mycss.css">
+    <!--导入layui插件-->
+    <link rel="stylesheet" href="<%=basePath%>plugins/layui/css/layui.css">
 
     <script type="text/javascript">
         $(document).ready(function() {
@@ -46,13 +44,10 @@
 
 </head>
 <body>
-<div style="text-align: right;">
-${sessionScope.admin.name}，<a href="<%=basePath %>backstage/logout">注销</a>
-</div>
-<a href="<%=basePath%>backstage/adminmanage/toAddAdmin" class="btn btn-primary" role="button" style="margin:5px 2px;text-shadow: black 5px 3px 3px;">
-    <span class="glyphicon glyphicon-plus" style="margin-right:5px;"></span> 添加管理账户
+<a href="<%=basePath%>backstage/adminmanage/toAddAdmin" class="layui-btn">
+  添加管理账户
 </a>
-<table class="table table-bordered table-hover  table-striped">
+<table class="layui-table" lay-even>
 <%--<caption>管理账户列表</caption>--%>
 <thead>
 <tr>
@@ -68,8 +63,8 @@ ${sessionScope.admin.name}，<a href="<%=basePath %>backstage/logout">注销</a>
     <td>${admin.username}</td>
     <td>${admin.password}</td>
     <td>${admin.name}</td>
-    <td style="width:20%;"><a href="<%=basePath %>backstage/adminmanage/toUpdateAdmin?id=${admin.id}" class="btn btn-info btn-xs">修改</a>
-        <a name="deleteAdmin" class="btn btn-info btn-xs" href="<%=basePath %>backstage/adminmanage/doDeleteAdmin?id=${admin.id}">删除</a>
+    <td style="width:20%;"><a href="<%=basePath %>backstage/adminmanage/toUpdateAdmin?id=${admin.id}" class="layui-btn layui-btn-xs">修改</a>
+        <a name="deleteAdmin" href="<%=basePath %>backstage/adminmanage/doDeleteAdmin?id=${admin.id}" class="layui-btn layui-btn-xs">删除</a>
     </td>
 </tr>
 </c:forEach>

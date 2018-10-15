@@ -15,16 +15,14 @@
 <html>
 <head>
     <title>编辑管理账户</title>
-    <!--导入bootstrap插件-->
-    <link rel="stylesheet" href="<%=basePath%>plugins/bootstrap/css/bootstrap.css">
+    <!--导入jquery插件-->
     <script src="<%=basePath%>plugins/jquery.js"></script>
-    <script type="text/javascript" src="<%=basePath%>plugins/bootstrap/js/bootstrap.js"></script>
-    <!--导入自定义样式文件-->
-    <link rel="stylesheet" href="<%=basePath%>css/mycss.css">
+    <!--导入layui插件-->
+    <link rel="stylesheet" href="<%=basePath%>plugins/layui/css/layui.css">
 
     <script type="text/javascript">
         $(document).ready(function() {
-            $("button[name='addAdmin']").click(function() {
+            $("button[name='updateAdmin']").click(function() {
                 var $myForm = $("#myForm");//获取指定a标签的jquery对象
                 $.post("<%=basePath%>backstage/adminmanage/doUpdateAdmin",
                     $myForm.serialize(),
@@ -42,20 +40,26 @@
 
 </head>
 <body>
-<div style="text-align: right;">${sessionScope.admin.name}，<a href="<%=basePath %>backstage/logout">注销</a></div>
-<form id="myForm" role="form">
+<form id="myForm" class="layui-form">
     <input type="hidden" name="id" value="${requestScope.admin.id}">
-    <div class="form-group">
-        <label for="username">账户名</label>
-        <input type="text" class="form-control" id="username" name="username" placeholder="请输入账户名" value="${requestScope.admin.username}" disabled="disabled">
+    <div class="layui-form-item">
+        <label class="layui-form-label">账户名</label>
+        <div class="layui-input-block">
+            <input type="text" id="username" name="username" value="${requestScope.admin.username}"  required  lay-verify="required" placeholder="请输入账户名" autocomplete="off" class="layui-input">
+        </div>
     </div>
-    <div class="form-group">
-        <label for="name">名称</label>
-        <input type="text" class="form-control" id="name" name="name" placeholder="请输入姓名" value="${requestScope.admin.name}">
+    <div class="layui-form-item">
+        <label class="layui-form-label">姓名</label>
+        <div class="layui-input-block">
+            <input type="text" id="name" name="name" value="${requestScope.admin.name}" required  lay-verify="required" placeholder="请输入姓名" autocomplete="off" class="layui-input">
+        </div>
     </div>
-
-    <button name="addAdmin" type="button" class="btn btn-default">修改</button>
-    <a class="btn btn-info" href="<%=basePath %>backstage/adminmanage/toManageAdmin">返回账户管理页面</a>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button name="updateAdmin" class="layui-btn" lay-submit lay-filter="formDemo">修改管理账户信息</button>
+            <a  class="layui-btn layui-btn-primary" href="<%=basePath %>backstage/adminmanage/toManageAdmin">返回账户管理页面</a>
+        </div>
+    </div>
 </form>
 </body>
 </html>

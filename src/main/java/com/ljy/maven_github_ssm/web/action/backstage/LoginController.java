@@ -33,7 +33,7 @@ public class LoginController {
 		Admin admin=adminService.login(username, password);
 		if(admin!=null){
 			session.setAttribute("admin",admin);
-			return "redirect:/backstage/adminmanage/toManageAdmin";
+			return "redirect:/backstage/index";
 		}else{
 			return "/jsp/backstage/loginerror.jsp";
 		}
@@ -47,6 +47,15 @@ public class LoginController {
 	public String logout(HttpSession session){
 		session.removeAttribute("admin");
 		return "/jsp/backstage/login.jsp";
+	}
+
+	/**
+	 * 跳转到首页
+	 * @return
+	 */
+	@RequestMapping(value = "/index")
+	public String index(HttpSession session){
+		return "/jsp/backstage/index.jsp";
 	}
 
 
