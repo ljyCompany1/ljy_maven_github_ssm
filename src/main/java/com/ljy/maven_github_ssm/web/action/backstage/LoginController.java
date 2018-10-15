@@ -33,7 +33,7 @@ public class LoginController {
 		Admin admin=adminService.login(username, password);
 		if(admin!=null){
 			session.setAttribute("admin",admin);
-			return "redirect:/backstage/adminmanage/toManageAdmin";
+			return "/jsp/backstage/main.jsp";
 		}else{
 			return "/jsp/backstage/loginerror.jsp";
 		}

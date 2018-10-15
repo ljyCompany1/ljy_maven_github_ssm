@@ -46,6 +46,9 @@
 
 </head>
 <body>
+<div style="text-align: right;">
+${sessionScope.admin.name}，<a href="<%=basePath %>backstage/logout">注销</a>
+</div>
 <a href="<%=basePath%>backstage/adminmanage/toAddAdmin" class="btn btn-primary" role="button" style="margin:5px 2px;">
     <span class="glyphicon glyphicon-user"></span> 添加管理账户
 </a>
